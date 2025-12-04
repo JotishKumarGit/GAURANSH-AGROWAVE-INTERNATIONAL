@@ -7,72 +7,145 @@
     <title>GAURANSH AGROWAVE INTERNATIONAL</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./assets/style.css">
 
     <style>
         /* Sticky Navbar */
-        .navbar {
+        .custom-navbar {
             position: sticky;
             top: 0;
             z-index: 999;
             background: #1b5e20 !important;
-            /* Dark organic green */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
         }
 
-        /* Brand Styling */
-        .navbar-brand {
-            font-weight: 700;
-            font-size: 1.3rem;
-            color: #fff !important;
-            letter-spacing: 1px;
+        .custom-navbar.scrolled {
+            background: rgba(27, 94, 32, 0.95) !important;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Brand */
+        .navbar-brand img {
+            transition: 0.3s ease;
+        }
+
+        .navbar-brand:hover img {
+            transform: scale(1.05);
         }
 
         /* Nav Links */
         .nav-link {
             color: #e8f5e9 !important;
             font-weight: 500;
+            font-size: 17px;
+            position: relative;
+            padding: 10px 14px;
             transition: 0.3s ease;
         }
 
         .nav-link:hover {
             color: #c8e6c9 !important;
-            /* Light green hover */
             transform: translateY(-2px);
+        }
+
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            background: #c8e6c9;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            transition: 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 70%;
         }
 
         /* Dropdown */
         .dropdown-menu {
             background: #2e7d32;
+            border: none;
+            border-radius: 8px;
+            animation: fadeInDown 0.3s ease-out;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
         }
 
         .dropdown-item {
             color: white;
-            transition: 0.3s;
+            transition: 0.3s ease;
         }
 
         .dropdown-item:hover {
             background: #1b5e20;
             color: #c8e6c9;
+            transform: translateX(4px);
+        }
+
+        /* Keyframe */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Enquiry Button */
         .enquiry-btn {
-            background: #a5d6a7;
+            background: linear-gradient(135deg, #a5d6a7, #c8e6c9);
             color: #1b5e20;
             font-weight: 600;
-            border-radius: 20px;
-            padding: 6px 18px;
-            transition: 0.3s;
+            border-radius: 25px;
+            padding: 12px 35px;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            transition: 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .enquiry-btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: 0.5s;
+        }
+
+        .enquiry-btn:hover::before {
+            left: 100%;
         }
 
         .enquiry-btn:hover {
-            background: #c8e6c9;
-            transform: scale(1.08);
+            transform: scale(1.08) translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
         }
+
+        /* RESPONSIVE FIXES */
+        @media (max-width: 991px) {
+            .navbar-nav {
+                text-align: center;
+                margin-top: 10px;
+                gap: 5px;
+            }
+        }
+
 
         /* Hero Section */
         .about-hero {
             height: 50vh;
-            background: url('assets/img/Vermicompost_2.webp') center/cover no-repeat;
+            background: url('assets/img/Moringa_Powder.webp') center/cover no-repeat;
             position: relative;
             display: flex;
             align-items: center;
@@ -229,12 +302,12 @@
 <body>
 
     <!-- NAVBAR START -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+        <div class="container-fluid justify-content-between">
 
-            <!-- Brand -->
-            <a class="navbar-brand" href="#">
-                GAURANSH AGROWAVE INTERNATIONAL
+            <!-- Brand Logo -->
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="assets/img/LOGO-01.png" height="60" alt="">
             </a>
 
             <!-- Toggler -->
@@ -242,17 +315,23 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <!-- Menu Items -->
-            <div class="collapse navbar-collapse" id="navMenu">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <!-- Menu + Enquiry Button -->
+            <div class="collapse navbar-collapse justify-content-center" id="navMenu">
 
-                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                <ul class="navbar-nav gap-lg-3 align-items-lg-center">
 
-                    <!-- Products Dropdown -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-house-door me-1"></i>Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-file-person-fill"></i> About</a>
+                    </li>
+
+                    <!-- Dropdown -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-                            Products
+                            <i class="bi bi-shop me-1"></i>Products
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Vermicompost</a></li>
@@ -261,19 +340,33 @@
                         </ul>
                     </li>
 
-                    <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-
-                    <!-- Enquiry Button -->
-                    <li class="nav-item ms-2">
-                        <a class="btn enquiry-btn" href="#" data-bs-toggle="modal"
-                            data-bs-target="#enquiryModal">Enquiry</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-wrench-adjustable-circle me-1"></i>Gallery</a>
                     </li>
 
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-journal-text me-1"></i>Blog</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-telephone me-1"></i>Contact</a>
+                    </li>
                 </ul>
+
             </div>
+
+            <!-- Enquiry Button (always right side) -->
+            <a class="btn enquiry-btn d-none d-lg-block" href="#" data-bs-toggle="modal" data-bs-target="#enquiryModal">
+                <i class="bi bi-chat-dots-fill me-1"></i> Enquiry
+            </a>
+
         </div>
+
+        <!-- For mobile (button moves below) -->
+        <a class="btn enquiry-btn d-lg-none mx-auto my-2" href="#" data-bs-toggle="modal"
+            data-bs-target="#enquiryModal">
+            <i class="bi bi-chat-dots-fill me-1"></i> Enquiry
+        </a>
     </nav>
     <!-- NAVBAR END -->
 
@@ -305,66 +398,152 @@
     </section>
 
     <!-- COMPANY OVERVIEW -->
-    <section class="bg-light">
-        <div class="container" data-aos="fade-right">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <img src="assets/img/baner_Curry_Leaves.jpg" class="img-fluid rounded" alt="Company Image">
+    <section class="who-we-are-section py-5" style="background: linear-gradient(135deg, #e8f5e9, #f1f8f3);">
+        <div class="container" data-aos="fade-up">
+            <div class="row align-items-center g-4">
+
+                <!-- Image Column -->
+                <div class="col-md-6 text-center text-md-start">
+                    <div class="image-wrapper position-relative overflow-hidden rounded-4 shadow-lg">
+                        <img src="assets/img/baner_Curry_Leaves.jpg" class="img-fluid rounded-4 who-img"
+                            alt="Company Image">
+                    </div>
                 </div>
+
+                <!-- Text Column -->
                 <div class="col-md-6">
-                    <h2>Who We Are</h2>
-                    <p>GAURANSH AGROWAVE INTERNATIONAL has over <strong>4 years of experience</strong> in the Exim
+                    <h2 class="fw-bold text-success mb-3">Who We Are</h2>
+                    <p class="lead text-muted">
+                        GAURANSH AGROWAVE INTERNATIONAL has over <strong>4 years of experience</strong> in the Exim
                         industry.
                         Our dedicated team of <strong>4 employees</strong> ensures top-notch service and premium quality
                         products.
+                    </p>
+                    <p class="text-muted">
                         We specialize in exporting Vermicompost, Curry Leaves, Moringa Powder, and other organic
-                        products worldwide.</p>
-                    <p>We are committed to excellence in <strong>quality, color, and packaging</strong>, making our
-                        products stand out in international markets.</p>
+                        products worldwide.
+                        We are committed to excellence in <strong>quality, color, and packaging</strong>, making our
+                        products stand out in international markets.
+                    </p>
+
+                    <!-- Feature Highlights -->
+                    <div class="row g-3 mt-3">
+                        <div class="col-12 col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-award-fill text-success fs-3 me-3"></i>
+                                <div>
+                                    <h6 class="mb-0 fw-semibold">Premium Quality</h6>
+                                    <small class="text-muted">Organic & carefully sourced</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-palette-fill text-success fs-3 me-3"></i>
+                                <div>
+                                    <h6 class="mb-0 fw-semibold">Vibrant Colors</h6>
+                                    <small class="text-muted">Naturally appealing products</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-box-seam-fill text-success fs-3 me-3"></i>
+                                <div>
+                                    <h6 class="mb-0 fw-semibold">Safe Packaging</h6>
+                                    <small class="text-muted">Hygienic & export-ready</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-globe2 text-success fs-3 me-3"></i>
+                                <div>
+                                    <h6 class="mb-0 fw-semibold">Global Reach</h6>
+                                    <small class="text-muted">Serving international markets</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- USP SECTION -->
-    <section>
+    <!-- USP SLIDER SECTION -->
+    <section class="usp-section py-5">
         <div class="container" data-aos="fade-up">
+
             <div class="text-center mb-5">
-                <h2>Our Unique Selling Points</h2>
-                <p>Why our products and services are trusted worldwide</p>
+                <h2 class="fw-bold text-success">Our Unique Selling Points</h2>
+                <p class="text-muted">Why our products and services are trusted worldwide</p>
             </div>
 
-            <div class="row g-4">
+            <!-- Bootstrap Slider -->
+            <div id="uspCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
 
-                <!-- Quality -->
-                <div class="col-md-4">
-                    <div class="card usp-card text-center p-4" data-aos="zoom-in" data-aos-delay="200">
-                        <i class="bi bi-award-fill mb-3" style="font-size: 40px; color: #2e7d32;"></i>
-                        <h3>Quality</h3>
-                        <p>We ensure premium quality organic products, carefully sourced and processed for the best
-                            results.</p>
+                    <!-- Slide 1 - Quality -->
+                    <div class="carousel-item active">
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card usp-card text-center p-4 shadow border-0 rounded-4">
+                                    <i class="bi bi-award-fill mb-3 usp-icon"></i>
+                                    <h3 class="fw-semibold">Quality</h3>
+                                    <p class="text-muted">
+                                        We ensure premium quality organic products, carefully sourced and processed for
+                                        the best results.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- Slide 2 - Colour -->
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card usp-card text-center p-4 shadow border-0 rounded-4">
+                                    <i class="bi bi-palette-fill mb-3 usp-icon"></i>
+                                    <h3 class="fw-semibold">Colour</h3>
+                                    <p class="text-muted">
+                                        Vibrant, natural colors that meet international standards and enhance product
+                                        appeal.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 - Packaging -->
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card usp-card text-center p-4 shadow border-0 rounded-4">
+                                    <i class="bi bi-box-seam-fill mb-3 usp-icon"></i>
+                                    <h3 class="fw-semibold">Packaging</h3>
+                                    <p class="text-muted">
+                                        Modern, hygienic, and attractive packaging ensuring safety and freshness during
+                                        export.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
-                <!-- Colour -->
-                <div class="col-md-4">
-                    <div class="card usp-card text-center p-4" data-aos="zoom-in" data-aos-delay="400">
-                        <i class="bi bi-palette-fill mb-3" style="font-size: 40px; color: #2e7d32;"></i>
-                        <h3>Colour</h3>
-                        <p>Vibrant, natural colors that meet international standards and enhance the appeal of our
-                            products.</p>
-                    </div>
-                </div>
+                <!-- Custom Arrow Controls -->
+                <button class="carousel-control-prev custom-arrow" type="button" data-bs-target="#uspCarousel"
+                    data-bs-slide="prev">
+                    <i class="bi bi-chevron-left"></i>
+                </button>
 
-                <!-- Packaging -->
-                <div class="col-md-4">
-                    <div class="card usp-card text-center p-4" data-aos="zoom-in" data-aos-delay="600">
-                        <i class="bi bi-box-seam-fill mb-3" style="font-size: 40px; color: #2e7d32;"></i>
-                        <h3>Packaging</h3>
-                        <p>Modern, hygienic, and attractive packaging that ensures safety and freshness during export.
-                        </p>
-                    </div>
-                </div>
+                <button class="carousel-control-next custom-arrow" type="button" data-bs-target="#uspCarousel"
+                    data-bs-slide="next">
+                    <i class="bi bi-chevron-right"></i>
+                </button>
 
             </div>
         </div>
@@ -430,87 +609,6 @@
                         <a href="#" class="btn btn-success rounded-pill px-4 mt-2">
                             Details
                         </a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- services  -->
-    <section class="services-section py-5" style="background: #e8f5e9;">
-        <div class="container" data-aos="fade-up">
-
-            <!-- Section Title -->
-            <div class="text-center mb-5">
-                <h2 class="fw-bold" style="color:#1b5e20;">Our Services</h2>
-                <p>Delivering excellence in every step from production to export.</p>
-            </div>
-
-            <div class="row g-4">
-
-                <!-- Export Services -->
-                <div class="col-md-4">
-                    <div class="service-card p-4 text-center shadow rounded" data-aos="zoom-in" data-aos-delay="200">
-
-                        <i class="bi bi-globe2 service-icon"></i>
-                        <h4 class="fw-bold">Global Export Services</h4>
-                        <p>We export high-quality Vermicompost, Curry Leaves, Moringa Powder and more to international
-                            markets.</p>
-                    </div>
-                </div>
-
-                <!-- Bulk Supply -->
-                <div class="col-md-4">
-                    <div class="service-card p-4 text-center shadow rounded" data-aos="zoom-in" data-aos-delay="350">
-
-                        <i class="bi bi-boxes service-icon"></i>
-                        <h4 class="fw-bold">Bulk & Wholesale Supply</h4>
-                        <p>Reliable bulk supply with consistent quality, timely dispatch, and premium-grade organic
-                            products.</p>
-                    </div>
-                </div>
-
-                <!-- Quality & Packaging -->
-                <div class="col-md-4">
-                    <div class="service-card p-4 text-center shadow rounded" data-aos="zoom-in" data-aos-delay="500">
-
-                        <i class="bi bi-shield-check service-icon"></i>
-                        <h4 class="fw-bold">Quality & Packaging</h4>
-                        <p>Exports with world-class hygienic packaging, freshness retention, and strict quality checks.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Farming Support -->
-                <div class="col-md-4">
-                    <div class="service-card p-4 text-center shadow rounded" data-aos="zoom-in" data-aos-delay="650">
-
-                        <i class="bi bi-tree-fill service-icon"></i>
-                        <h4 class="fw-bold">Organic Farming Support</h4>
-                        <p>Guidance for farmers to adopt organic farming practices for better yields and sustainability.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Logistics -->
-                <div class="col-md-4">
-                    <div class="service-card p-4 text-center shadow rounded" data-aos="zoom-in" data-aos-delay="800">
-
-                        <i class="bi bi-truck service-icon"></i>
-                        <h4 class="fw-bold">Export Logistics</h4>
-                        <p>We handle shipping, customs, documentation, and fast delivery to your destination country.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Custom Orders -->
-                <div class="col-md-4">
-                    <div class="service-card p-4 text-center shadow rounded" data-aos="zoom-in" data-aos-delay="950">
-
-                        <i class="bi bi-pencil-square service-icon"></i>
-                        <h4 class="fw-bold">Custom Orders</h4>
-                        <p>We offer custom packaging, labeling, and product specifications based on client needs.</p>
                     </div>
                 </div>
 
@@ -692,56 +790,68 @@
     </section>
 
     <!-- blog -->
-    <section class="blog-section py-5" style="background:#ffffff;">
+    <section class="blog-section py-5" style="background: #f0f8f5;">
         <div class="container" data-aos="fade-up">
 
             <!-- Section Title -->
             <div class="text-center mb-5">
                 <h2 class="fw-bold" style="color:#1b5e20;">Latest Blogs</h2>
-                <p>Stay updated with our agricultural insights, export news, and organic product knowledge.</p>
+                <p class="text-muted">Stay updated with our agricultural insights, export news, and organic product
+                    knowledge.</p>
             </div>
 
             <div class="row g-4">
 
                 <!-- Blog 1 -->
                 <div class="col-md-4">
-                    <div class="blog-card shadow rounded overflow-hidden" data-aos="zoom-in" data-aos-delay="200">
-                        <img src="assets/img/Vermicompost.jpg" class="img-fluid blog-img" alt="Blog Image">
-
-                        <div class="p-4">
-                            <h4 class="fw-bold" style="color:#1b5e20;">Benefits of Using Organic Vermicompost</h4>
-                            <p>Learn how vermicompost improves soil fertility, boosts growth, and promotes sustainable
-                                farming.</p>
-                            <a href="#" class="btn btn-success rounded-pill mt-2">Read More</a>
+                    <div class="blog-card shadow rounded overflow-hidden position-relative" data-aos="zoom-in"
+                        data-aos-delay="200">
+                        <div class="blog-img-wrapper position-relative overflow-hidden">
+                            <img src="assets/img/Vermicompost.jpg" class="img-fluid blog-img" alt="Blog Image">
+                            <div class="blog-overlay d-flex align-items-center justify-content-center">
+                                <a href="#" class="btn btn-outline-light rounded-pill">Read More</a>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-white">
+                            <h4 class="fw-bold text-success">Benefits of Using Organic Vermicompost</h4>
+                            <p class="text-muted">Learn how vermicompost improves soil fertility, boosts growth, and
+                                promotes sustainable farming.</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Blog 2 -->
                 <div class="col-md-4">
-                    <div class="blog-card shadow rounded overflow-hidden" data-aos="zoom-in" data-aos-delay="400">
-                        <img src="assets/img/baner_Curry_Leaves.jpg" class="img-fluid blog-img" alt="Blog Image">
-
-                        <div class="p-4">
-                            <h4 class="fw-bold" style="color:#1b5e20;">Why Fresh Curry Leaves Are in High Global Demand
-                            </h4>
-                            <p>Discover the increasing export demand for fresh, aromatic curry leaves across the world.
-                            </p>
-                            <a href="#" class="btn btn-success rounded-pill mt-2">Read More</a>
+                    <div class="blog-card shadow rounded overflow-hidden position-relative" data-aos="zoom-in"
+                        data-aos-delay="400">
+                        <div class="blog-img-wrapper position-relative overflow-hidden">
+                            <img src="assets/img/baner_Curry_Leaves.jpg" class="img-fluid blog-img" alt="Blog Image">
+                            <div class="blog-overlay d-flex align-items-center justify-content-center">
+                                <a href="#" class="btn btn-outline-light rounded-pill">Read More</a>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-white">
+                            <h4 class="fw-bold text-success">Why Fresh Curry Leaves Are in High Global Demand</h4>
+                            <p class="text-muted">Discover the increasing export demand for fresh, aromatic curry leaves
+                                across the world.</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Blog 3 -->
                 <div class="col-md-4">
-                    <div class="blog-card shadow rounded overflow-hidden" data-aos="zoom-in" data-aos-delay="600">
-                        <img src="assets/img/Moringa_Powder.webp" class="img-fluid blog-img" alt="Blog Image">
-
-                        <div class="p-4">
-                            <h4 class="fw-bold" style="color:#1b5e20;">The Power of Moringa: A Superfood for the World
-                            </h4>
-                            <p>Explore the health benefits, export demand, and global popularity of moringa powder.</p>
-                            <a href="#" class="btn btn-success rounded-pill mt-2">Read More</a>
+                    <div class="blog-card shadow rounded overflow-hidden position-relative" data-aos="zoom-in"
+                        data-aos-delay="600">
+                        <div class="blog-img-wrapper position-relative overflow-hidden">
+                            <img src="assets/img/Moringa_Powder.webp" class="img-fluid blog-img" alt="Blog Image">
+                            <div class="blog-overlay d-flex align-items-center justify-content-center">
+                                <a href="#" class="btn btn-outline-light rounded-pill">Read More</a>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-white">
+                            <h4 class="fw-bold text-success">The Power of Moringa: A Superfood for the World</h4>
+                            <p class="text-muted">Explore the health benefits, export demand, and global popularity of
+                                moringa powder.</p>
                         </div>
                     </div>
                 </div>
@@ -749,6 +859,60 @@
             </div>
         </div>
     </section>
+
+
+    <!-- ================== GALLERY SECTION ================== -->
+    <section class="gallery-section py-5">
+        <div class="container">
+            <h2 class="text-center gallery-title">
+                Our <span>Gallery</span>
+            </h2>
+
+            <div class="row g-4 gallery-wrapper justify-content-center align-items-center">
+
+                <!-- Gallery Item -->
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="gallery-img">
+                        <img src="assets/img/baner_Curry_Leaves.jpg" height="auto" width="100%" alt="Organic Farming">
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="gallery-img">
+                        <img src="assets/img/Curry_Leaves.jpg" height="auto" width="100%" alt="Vermicompost">
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="gallery-img">
+                        <img src="assets/img/Moringa_Powder.webp" height="auto" width="100%" alt="Curry Leaves Farm">
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="gallery-img">
+                        <img src="assets/img/Vermicompost.jpg" height="auto" width="100%" alt="Moringa Powder">
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="gallery-img">
+                        <img src="assets/img//Vermicompost_2.webp" height="auto" width="100%" alt="Organic Products">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- LIGHTBOX POPUP -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+
+
     <!-- Contact us   -->
     <section class="contact-section py-5" style="background:#f1f8e9;">
         <div class="container" data-aos="fade-up">
@@ -885,6 +1049,7 @@
             <!-- BOTTOM COPYRIGHT -->
             <div class="text-center py-3">
                 © <span id="year"></span> GAURANSH AGROWAVE INTERNATIONAL — All Rights Reserved.
+                <p>Managed By :- <a href="trade4export.com">Trade4Export</a></p>
             </div>
         </div>
     </footer>
@@ -1006,6 +1171,37 @@
             document.getElementById("newsletterMsg").innerHTML =
                 "<span style='color:#a5d6a7;'>Thank you for subscribing!</span>";
             document.getElementById("newsletterEmail").value = "";
+        });
+    </script>
+
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+    <!-- gallery js -->
+    <script>
+        const galleryImages = document.querySelectorAll(".gallery-img img");
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const closeBtn = document.querySelector(".close-lightbox");
+
+        galleryImages.forEach(img => {
+            img.addEventListener("click", () => {
+                lightbox.style.display = "block";
+                lightboxImg.src = img.src;
+            });
+        });
+
+        closeBtn.addEventListener("click", () => {
+            lightbox.style.display = "none";
         });
     </script>
 

@@ -9,7 +9,50 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./assets/style.css">
 
+    <style>
+        /* bread crumb css */
+        .breadcrumb-section {
+            position: relative;
+            background-image: url('./img/baner_Curry_Leaves.jpg');
+            /* Replace with your image */
+            background-size: cover;
+            background-position: center;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* Dark overlay using linear-gradient */
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('assets/img/baner_Curry_Leaves.jpg');
+            background-size: cover;
+            background-position: center;
+        }
 
+        .breadcrumb-content {
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .breadcrumb-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .breadcrumb .breadcrumb-item a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .breadcrumb .breadcrumb-item.active {
+            color: #d4d4d4;
+        }
+
+        .breadcrumb .breadcrumb-item+.breadcrumb-item::before {
+            color: #ffffff;
+            /* separator color */
+        }
+    </style>
+    
 </head>
 
 <body>
@@ -19,10 +62,10 @@
         <div class="container-fluid justify-content-between">
 
             <!-- Brand Logo -->
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <a class="navbar-brand d-flex align-items-center" href="index.php">
                 <img src="assets/img/LOGO-01.png" class="fw-bold" height="100px" alt="">
             </a>
-            <a class="navbar-brand d-none d-md-flex align-items-center" href="index.html">
+            <a class="navbar-brand d-none d-md-flex align-items-center" href="index.php">
                 <span class="fw-bold" style="color: #0b7414;">
                     GAURANSH AGROWAVE INTERNATIONAL
                 </span>
@@ -39,11 +82,11 @@
                 <ul class="navbar-nav gap-lg-3 align-items-lg-center">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html"><i class="bi bi-house-door me-1"></i>Home</a>
+                        <a class="nav-link" href="index.php"><i class="bi bi-house-door me-1"></i>Home</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html"><i class="bi bi-file-person-fill"></i> About</a>
+                        <a class="nav-link" href="about.php"><i class="bi bi-file-person-fill"></i> About</a>
                     </li>
 
                     <!-- Dropdown -->
@@ -52,23 +95,23 @@
                             <i class="bi bi-shop me-1"></i>Products
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="vermicompost.html">Vermicompost</a></li>
-                            <li><a class="dropdown-item" href="curry_leaves.html">Curry Leaves</a></li>
-                            <li><a class="dropdown-item" href="moringa_powder.html">Moringa Powder</a></li>
+                            <li><a class="dropdown-item" href="vermicompost.php">Vermicompost</a></li>
+                            <li><a class="dropdown-item" href="curry_leaves.php">Curry Leaves</a></li>
+                            <li><a class="dropdown-item" href="moringa_powder.php">Moringa Powder</a></li>
                         </ul>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="gallery.html"><i
+                        <a class="nav-link" href="gallery.php"><i
                                 class="bi bi-wrench-adjustable-circle me-1"></i>Gallery</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="blog.html"><i class="bi bi-journal-text me-1"></i>Blog</a>
+                        <a class="nav-link" href="blog.php"><i class="bi bi-journal-text me-1"></i>Blog</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html"><i class="bi bi-telephone me-1"></i>Contact</a>
+                        <a class="nav-link" href="contact.php"><i class="bi bi-telephone me-1"></i>Contact</a>
                     </li>
                 </ul>
 
@@ -89,96 +132,56 @@
     </nav>
     <!-- NAVBAR END -->
 
-
     <!-- bread crumb sections -->
-    <!-- <section class="breadcrumb-section">
+    <section class="breadcrumb-section">
         <div class="breadcrumb-content">
-            <h1>About Us</h1>
+            <h1>Gallery </h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb justify-content-center mb-0">
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">About Us</li>
+                    <li class="breadcrumb-item active" aria-current="page">Gallery</li>
                 </ol>
             </nav>
         </div>
-    </section> -->
-
-
-    <!-- HERO SECTION -->
-    <section class="about-hero">
-        <div class="content" data-aos="fade-up" data-aos-duration="1500">
-            <h1 class="display-4 fw-bold">About Us</h1>
-            <p class="lead">Committed to providing high-quality organic products for global markets.</p>
-        </div>
     </section>
 
-    <!-- COMPANY OVERVIEW -->
-    <section class="who-we-are-section py-5" style="background: linear-gradient(135deg, #e8f5e9, #f1f8f3);">
-        <div class="container" data-aos="fade-up">
-            <div class="row align-items-center g-4">
+    <!-- ================== GALLERY SECTION ================== -->
+    <section class="gallery-section py-5">
+        <div class="container">
+            <h2 class="text-center gallery-title">
+                Our <span>Gallery</span>
+            </h2>
 
-                <!-- Image Column -->
-                <div class="col-md-6 text-center text-md-start">
-                    <div class="image-wrapper position-relative overflow-hidden rounded-4 shadow-lg">
-                        <img src="assets/img/baner_Curry_Leaves.jpg" class="img-fluid rounded-4 who-img"
-                            alt="Company Image">
+            <div class="row g-4 gallery-wrapper justify-content-center align-items-center">
+
+                <!-- Gallery Item -->
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="gallery-img">
+                        <img src="assets/img/baner_Curry_Leaves.jpg" height="auto" width="100%" alt="Organic Farming">
                     </div>
                 </div>
 
-                <!-- Text Column -->
-                <div class="col-md-6">
-                    <h2 class="fw-bold text-success mb-3">Who We Are</h2>
-                    <p class="lead text-muted">
-                        GAURANSH AGROWAVE INTERNATIONAL has over <strong>4 years of experience</strong> in the Exim
-                        industry.
-                        Our dedicated team of <strong>4 employees</strong> ensures top-notch service and premium quality
-                        products.
-                    </p>
-                    <p class="text-muted">
-                        We specialize in exporting Vermicompost, Curry Leaves, Moringa Powder, and other organic
-                        products worldwide.
-                        We are committed to excellence in <strong>quality, color, and packaging</strong>, making our
-                        products stand out in international markets.
-                    </p>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="gallery-img">
+                        <img src="assets/img/Curry_Leaves.jpg" height="auto" width="100%" alt="Vermicompost">
+                    </div>
+                </div>
 
-                    <!-- Feature Highlights -->
-                    <div class="row g-3 mt-3">
-                        <div class="col-12 col-md-6">
-                            <div class="d-flex align-items-center">
-                                <i class="bi bi-award-fill text-success fs-3 me-3"></i>
-                                <div>
-                                    <h6 class="mb-0 fw-semibold">Premium Quality</h6>
-                                    <small class="text-muted">Organic & carefully sourced</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <div class="d-flex align-items-center">
-                                <i class="bi bi-palette-fill text-success fs-3 me-3"></i>
-                                <div>
-                                    <h6 class="mb-0 fw-semibold">Vibrant Colors</h6>
-                                    <small class="text-muted">Naturally appealing products</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <div class="d-flex align-items-center">
-                                <i class="bi bi-box-seam-fill text-success fs-3 me-3"></i>
-                                <div>
-                                    <h6 class="mb-0 fw-semibold">Safe Packaging</h6>
-                                    <small class="text-muted">Hygienic & export-ready</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <div class="d-flex align-items-center">
-                                <i class="bi bi-globe2 text-success fs-3 me-3"></i>
-                                <div>
-                                    <h6 class="mb-0 fw-semibold">Global Reach</h6>
-                                    <small class="text-muted">Serving international markets</small>
-                                </div>
-                            </div>
-                        </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="gallery-img">
+                        <img src="assets/img/Moringa_Powder.webp" height="auto" width="100%" alt="Curry Leaves Farm">
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="gallery-img">
+                        <img src="assets/img/Vermicompost.jpg" height="auto" width="100%" alt="Moringa Powder">
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="gallery-img">
+                        <img src="assets/img//Vermicompost_2.webp" height="auto" width="100%" alt="Organic Products">
                     </div>
                 </div>
 
@@ -186,83 +189,11 @@
         </div>
     </section>
 
-    <!-- USP SLIDER SECTION -->
-    <section class="usp-section py-5">
-        <div class="container" data-aos="fade-up">
-
-            <div class="text-center mb-5">
-                <h2 class="fw-bold text-success">Our Unique Selling Points</h2>
-                <p class="text-muted">Why our products and services are trusted worldwide</p>
-            </div>
-
-            <!-- Bootstrap Slider -->
-            <div id="uspCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-
-                    <!-- Slide 1 - Quality -->
-                    <div class="carousel-item active">
-                        <div class="row justify-content-center">
-                            <div class="col-md-6 col-lg-4">
-                                <div class="card usp-card text-center p-4 shadow border-0 rounded-4">
-                                    <i class="bi bi-award-fill mb-3 usp-icon"></i>
-                                    <h3 class="fw-semibold">Quality</h3>
-                                    <p class="text-muted">
-                                        We ensure premium quality organic products, carefully sourced and processed for
-                                        the best results.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 2 - Colour -->
-                    <div class="carousel-item">
-                        <div class="row justify-content-center">
-                            <div class="col-md-6 col-lg-4">
-                                <div class="card usp-card text-center p-4 shadow border-0 rounded-4">
-                                    <i class="bi bi-palette-fill mb-3 usp-icon"></i>
-                                    <h3 class="fw-semibold">Colour</h3>
-                                    <p class="text-muted">
-                                        Vibrant, natural colors that meet international standards and enhance product
-                                        appeal.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 3 - Packaging -->
-                    <div class="carousel-item">
-                        <div class="row justify-content-center">
-                            <div class="col-md-6 col-lg-4">
-                                <div class="card usp-card text-center p-4 shadow border-0 rounded-4">
-                                    <i class="bi bi-box-seam-fill mb-3 usp-icon"></i>
-                                    <h3 class="fw-semibold">Packaging</h3>
-                                    <p class="text-muted">
-                                        Modern, hygienic, and attractive packaging ensuring safety and freshness during
-                                        export.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Custom Arrow Controls -->
-                <button class="carousel-control-prev custom-arrow" type="button" data-bs-target="#uspCarousel"
-                    data-bs-slide="prev">
-                    <i class="bi bi-chevron-left"></i>
-                </button>
-
-                <button class="carousel-control-next custom-arrow" type="button" data-bs-target="#uspCarousel"
-                    data-bs-slide="next">
-                    <i class="bi bi-chevron-right"></i>
-                </button>
-
-            </div>
-        </div>
-    </section>
+    <!-- LIGHTBOX POPUP -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
 
     <!-- footer -->
     <footer class="footer bg-dark text-light pt-5">

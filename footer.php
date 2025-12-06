@@ -1,199 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GAURANSH AGROWAVE INTERNATIONAL</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./assets/style.css">
-
-    <style>
-        /* bread crumb css */
-        .breadcrumb-section {
-            position: relative;
-            background-image: url('./img/baner_Curry_Leaves.jpg');
-            /* Replace with your image */
-            background-size: cover;
-            background-position: center;
-            height: 250px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            /* Dark overlay using linear-gradient */
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                url('assets/img/baner_Curry_Leaves.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .breadcrumb-content {
-            text-align: center;
-            color: #ffffff;
-        }
-
-        .breadcrumb-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        .breadcrumb .breadcrumb-item a {
-            color: #ffffff;
-            text-decoration: none;
-        }
-
-        .breadcrumb .breadcrumb-item.active {
-            color: #d4d4d4;
-        }
-
-        .breadcrumb .breadcrumb-item+.breadcrumb-item::before {
-            color: #ffffff;
-            /* separator color */
-        }
-    </style>
-    
-</head>
-
-<body>
-
-    <!-- NAVBAR START -->
-    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar py-0 ">
-        <div class="container-fluid justify-content-between">
-
-            <!-- Brand Logo -->
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="assets/img/LOGO-01.png" class="fw-bold" height="100px" alt="">
-            </a>
-            <a class="navbar-brand d-none d-md-flex align-items-center" href="index.html">
-                <span class="fw-bold" style="color: #0b7414;">
-                    GAURANSH AGROWAVE INTERNATIONAL
-                </span>
-            </a>
-
-            <!-- Toggler -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-                <span class="navbar-toggler-icon "></span>
-            </button>
-
-            <!-- Menu + Enquiry Button -->
-            <div class="collapse navbar-collapse justify-content-center" id="navMenu">
-
-                <ul class="navbar-nav gap-lg-3 align-items-lg-center">
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html"><i class="bi bi-house-door me-1"></i>Home</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html"><i class="bi bi-file-person-fill"></i> About</a>
-                    </li>
-
-                    <!-- Dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-                            <i class="bi bi-shop me-1"></i>Products
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="vermicompost.html">Vermicompost</a></li>
-                            <li><a class="dropdown-item" href="curry_leaves.html">Curry Leaves</a></li>
-                            <li><a class="dropdown-item" href="moringa_powder.html">Moringa Powder</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="gallery.html"><i
-                                class="bi bi-wrench-adjustable-circle me-1"></i>Gallery</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="blog.html"><i class="bi bi-journal-text me-1"></i>Blog</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html"><i class="bi bi-telephone me-1"></i>Contact</a>
-                    </li>
-                </ul>
-
-            </div>
-
-            <!-- Enquiry Button (always right side) -->
-            <a class="btn enquiry-btn d-none d-lg-block" href="#" data-bs-toggle="modal" data-bs-target="#enquiryModal">
-                <i class="bi bi-chat-dots-fill me-1"></i> Enquiry
-            </a>
-
-        </div>
-
-        <!-- For mobile (button moves below) -->
-        <a class="btn enquiry-btn d-lg-none mx-auto my-2" href="#" data-bs-toggle="modal"
-            data-bs-target="#enquiryModal">
-            <i class="bi bi-chat-dots-fill me-1"></i> Enquiry
-        </a>
-    </nav>
-    <!-- NAVBAR END -->
-
-    <!-- bread crumb sections -->
-    <section class="breadcrumb-section">
-        <div class="breadcrumb-content">
-            <h1>Gallery </h1>
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Gallery</li>
-                </ol>
-            </nav>
-        </div>
-    </section>
-
-    <!-- ================== GALLERY SECTION ================== -->
-    <section class="gallery-section py-5">
-        <div class="container">
-            <h2 class="text-center gallery-title">
-                Our <span>Gallery</span>
-            </h2>
-
-            <div class="row g-4 gallery-wrapper justify-content-center align-items-center">
-
-                <!-- Gallery Item -->
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="gallery-img">
-                        <img src="assets/img/baner_Curry_Leaves.jpg" height="auto" width="100%" alt="Organic Farming">
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="gallery-img">
-                        <img src="assets/img/Curry_Leaves.jpg" height="auto" width="100%" alt="Vermicompost">
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="gallery-img">
-                        <img src="assets/img/Moringa_Powder.webp" height="auto" width="100%" alt="Curry Leaves Farm">
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="gallery-img">
-                        <img src="assets/img/Vermicompost.jpg" height="auto" width="100%" alt="Moringa Powder">
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="gallery-img">
-                        <img src="assets/img//Vermicompost_2.webp" height="auto" width="100%" alt="Organic Products">
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- LIGHTBOX POPUP -->
-    <div id="lightbox" class="lightbox">
-        <span class="close-lightbox">&times;</span>
-        <img class="lightbox-content" id="lightbox-img">
-    </div>
 
     <!-- footer -->
     <footer class="footer bg-dark text-light pt-5">
@@ -338,7 +142,7 @@
 
     <!-- for enquiry -->
     <script>
-        document.getElementById("enquiryForm").addEventListener("submit", function (e) {
+        document.getElementById("enquiryForm").addEventListener("submit", function(e) {
             e.preventDefault();
 
             let name = document.getElementById("enq_name").value;
@@ -349,13 +153,13 @@
 
             let whatsappNumber = "917039270842"; // Put your number
 
-            let url = "https://wa.me/" + whatsappNumber + "?text="
-                + "*New Enquiry (Website)*%0A%0A"
-                + "*Name:* " + name + "%0A"
-                + "*Email:* " + email + "%0A"
-                + "*Phone:* " + phone + "%0A"
-                + "*Subject:* " + subject + "%0A"
-                + "*Message:* " + message;
+            let url = "https://wa.me/" + whatsappNumber + "?text=" +
+                "*New Enquiry (Website)*%0A%0A" +
+                "*Name:* " + name + "%0A" +
+                "*Email:* " + email + "%0A" +
+                "*Phone:* " + phone + "%0A" +
+                "*Subject:* " + subject + "%0A" +
+                "*Message:* " + message;
 
             window.open(url, "_blank").focus();
         });
@@ -363,7 +167,7 @@
 
     <!-- send on whatsapp message  -->
     <script>
-        document.getElementById("whatsappForm").addEventListener("submit", function (event) {
+        document.getElementById("whatsappForm").addEventListener("submit", function(event) {
             event.preventDefault();
 
             let name = document.getElementById("name").value;
@@ -373,12 +177,12 @@
 
             let whatsappNumber = "917039270842"; // Replace with your number
 
-            let url = "https://wa.me/" + whatsappNumber + "?text="
-                + "New Enquiry from Website%0A%0A"
-                + "*Name:* " + name + "%0A"
-                + "*Email:* " + email + "%0A"
-                + "*Phone:* " + phone + "%0A"
-                + "*Message:* " + message;
+            let url = "https://wa.me/" + whatsappNumber + "?text=" +
+                "New Enquiry from Website%0A%0A" +
+                "*Name:* " + name + "%0A" +
+                "*Email:* " + email + "%0A" +
+                "*Phone:* " + phone + "%0A" +
+                "*Message:* " + message;
 
             window.open(url, "_blank").focus();
         });
@@ -388,14 +192,13 @@
     <script>
         document.getElementById("year").textContent = new Date().getFullYear();
 
-        document.getElementById("newsletterForm").addEventListener("submit", function (e) {
+        document.getElementById("newsletterForm").addEventListener("submit", function(e) {
             e.preventDefault();
             document.getElementById("newsletterMsg").innerHTML =
                 "<span style='color:#a5d6a7;'>Thank you for subscribing!</span>";
             document.getElementById("newsletterEmail").value = "";
         });
     </script>
-
 
     <script>
         window.addEventListener('scroll', () => {
